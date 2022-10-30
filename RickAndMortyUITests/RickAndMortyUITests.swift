@@ -29,6 +29,15 @@ final class RickAndMortyUITests: XCTestCase {
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    func testWelcome() throws {
+        let app = XCUIApplication()
+        app.launch()
+     
+        let welcome = app.staticTexts["Characters"]
+     
+        XCTAssert(welcome.exists)
+    }
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
